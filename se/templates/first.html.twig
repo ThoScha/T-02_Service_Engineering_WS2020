@@ -1,0 +1,24 @@
+<h2>New</h2>
+<div class="table">
+    <form class="tr" action="index.php" method="post">
+    <input  class="td" type="text" name="firstname" value="">
+    <input  class="td" type="text" name="lastname" value="">
+    <input  class="td" type="text" name="nix" value="">
+    <button class="td action" type="submit" name="add_button" value="add">Add</button>
+    </form>
+</div>
+<h2>Entries:</h2>
+<div class="table">
+    {% for user in input %}
+        <form class="tr" action="index.php" method="post">
+        <input type="hidden" name="userID" value={{user.id}}>
+        <input  class="td" type="text" name="firstname" value="{{ user.firstname }}">
+        <input  class="td" type="text" name="lastname" value="{{ user.lastname }}">
+        <input  class="td" type="text" name="nix" value="nix">
+        <button class="td action" type="submit" name="update_button" value="update">Update</button>
+        <button class="td action" type="submit" name="delete_button" value="delete">Delete</button>
+        </form>
+    {% endfor %}
+</div>
+
+
